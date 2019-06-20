@@ -2,7 +2,7 @@ from typing import Optional
 
 
 class Node:
-    def __init__(self, value: int, next_node: Optional['Node']):
+    def __init__(self, value: int, next_node: Optional['Node'] = None):
         self.value = value
         self.next_node = next_node
 
@@ -10,6 +10,15 @@ class Node:
 class LinkedList:
     def __init__(self, first_node: Optional[Node] = None):
         self.first_node = first_node
+
+    @staticmethod
+    def create_list(*args):
+        new_list = LinkedList()
+        for arg in args:
+            new_node = Node(arg)
+            new_list.append(new_node)
+
+        return new_list
 
     def empty(self) -> bool:
         return self.first_node is None
