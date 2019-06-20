@@ -22,6 +22,18 @@ class LinkedList:
             self.last_added_node.next_node = new_node
             self.last_added_node = new_node
 
+    def count(self):
+        if self.first_node == None:
+            return 0
+        else:
+            count = 1
+            next_node = self.first_node
+            while next_node.next_node != None:
+                count = count+1
+                next_node = next_node.next_node
+
+            return count
+
     def enumerate(self):
         ...
 

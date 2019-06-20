@@ -21,3 +21,11 @@ def test_append_for_three_values():
     assert new_list.first_node.value == 3
     assert new_list.first_node.next_node.value == 1
     assert new_list.first_node.next_node.next_node.value == 5
+
+def test_count_on_empty_list_to_zero():
+    new_list = LinkedList()
+    assert new_list.count() == 0
+
+def test_count_on_list_with_two_node():
+    new_list = LinkedList(Node(3, Node(5, None)))
+    assert new_list.count() == 2
