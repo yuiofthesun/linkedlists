@@ -38,4 +38,9 @@ def test_create_list_with_two_nodes():
     newlist = LinkedList.create_list(3 , 5)
     assert newlist.count() == 2
     assert newlist.first_node.value == 3
-    assert newlist.first_node.next_node.value == 5
+    newlist.first_node.next_node.value == 5
+
+def test_enumerate_with_no_nodes():
+    newlist = LinkedList()
+    assert newlist.enumerate()
+
