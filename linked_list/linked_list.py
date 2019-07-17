@@ -6,6 +6,11 @@ class Node:
         self.value = value
         self.next_node = next_node
 
+    def __next__(self):
+        return self.next_node
+
+    def __repr__(self):
+        return str(self.value)
 
 class LinkedList:
     def __init__(self, first_node: Optional[Node] = None):
@@ -43,8 +48,16 @@ class LinkedList:
 
         return count
 
+    def __iter__(self):
+        return self.first_node
+
     def enumerate(self):
         ...
 
     def insert(self):
         ...
+
+if __name__ == '__main__':
+        ll = LinkedList.create_list(1,1,2,3,5,8)
+        for x in ll:
+            print(x)
